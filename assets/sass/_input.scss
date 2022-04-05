@@ -1,0 +1,168 @@
+.form-group {
+  position: relative;
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  color: $dark;
+}
+
+/*
+  * Select
+*/
+.select select,
+input,
+.btn {
+  font-family: $fontMain;
+  font-size: 1.1rem;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: .75rem 2.25rem .65rem 1rem;
+  line-height: 1.5;
+  color: $dark;
+  background-color: $grey;
+  border: 0;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  cursor: pointer;
+  transition: .3s;
+  outline: 0;
+  -webkit-appearance: none;
+      -moz-appearance: none;
+          appearance: none;
+
+  &:active,
+  &:focus {
+    background-color: darken($grey, 2);
+    box-shadow: $shadowActive;
+  }
+  
+  &:hover {
+    background-color: darken($grey, 2);
+    box-shadow: $shadowActive;
+    // box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  }
+
+}
+/* Undo the Firefox inner focus ring */
+.select select:focus:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+/* Dropdown arrow */
+.select:after {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -.15rem;
+  pointer-events: none;
+  border-top: .35rem solid;
+  border-right: .35rem solid transparent;
+  border-bottom: .35rem solid transparent;
+  border-left: .35rem solid transparent;
+}
+
+// /* Hover state */
+// .select select:hover,
+// input:hover {
+//   background-color: lighten($grey, 2);
+//   background-image: linear-gradient(62deg, lighten($grey, 0) 0%, lighten($grey, 2) 100%);
+//   box-shadow: $shadowActive;
+//   // box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+// }
+
+
+// /* Focus */
+// .select select:focus,
+// input:focus {
+//   box-shadow: $shadowActive;
+// }
+
+// /* Active/open */
+// .select select:active,
+// input:active {
+//   box-shadow: $shadowActive;
+// }
+
+// /* Hide the arrow in IE10 and up */
+// .select select::-ms-expand {
+//   display: none;
+// }
+
+/* Media query to target Firefox only */
+@-moz-document url-prefix() {
+  /* Firefox hack to hide the arrow */
+  .select select {
+    text-indent: 0.01px;
+  }
+
+  /* <option> elements inherit styles from <select>, so reset them. */
+  .select option {
+    // background-color: #fff;
+  }
+}
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0) {
+.select select {
+  z-index: 1;
+  padding: .5rem 1.5rem .5rem 1rem;
+}
+.select:after {
+  z-index: 5;
+}
+.select:before {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  bottom: 0;
+  z-index: 2;
+  content: "";
+  display: block;
+  width: 1.5rem;
+  background-color: $grey;
+}
+.select select:hover,
+.select select:focus,
+.select select:active {
+  color: $dark;
+  background-color: $grey;
+}
+}
+
+/*
+  * Search
+*/
+input {
+  display: block;
+  padding-left: 3em;
+  padding-right: .5em;
+  margin-right: 1em;
+  width: unset;
+}
+
+#searchIcon {
+  position: absolute;
+  z-index: 1;
+  left: .5em;
+  top: 50%;
+  transform: translateY(-42%) scale(.85);
+  cursor: pointer;
+  
+  & svg path {
+    fill: $dark !important;
+  }
+}
+
+.btn {
+  width: fit-content;
+  max-width: 6.25rem;
+  padding: .75em 2em;
+}

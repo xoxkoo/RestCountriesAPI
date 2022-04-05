@@ -1,0 +1,93 @@
+.card-container
+    margin-top: 5em
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+    min-height: 50vh
+
+// .card-group
+//     position: relative
+//     &:hover
+//         & .card
+//         & .card-shadow
+//             transform: translate(-50%, -10px)
+
+.card-shadow
+    // transition: .35s
+    // border-radius: $radius
+    // box-shadow: $shadow
+    // background: #000
+    // width: 60%
+    // height: 6.25rem
+
+    // position: absolute
+    // bottom: 3.01em
+    // left: 50%
+    // transform: translate(-50%, 0)
+
+    // z-index: -10
+
+.card
+    display: block
+    position: relative
+    transition: .3s
+    width: 19rem
+    // min-height: 17rem
+    // border: 1px solid $dark
+    box-shadow: $shadow
+    background: #fff
+    border-radius: $radius
+    margin: 0 1em 3em
+    cursor: pointer
+
+    & img
+        object-fit: cover
+        height: 12.5rem
+        border-bottom: 1px solid $grey
+        // box-shadow: $shadow
+        border-top-left-radius: $radius
+        border-top-right-radius: $radius
+
+    &:hover
+        transform: translateY(-8px)
+        &::after
+            transform: translate(-50%, 12px)
+        &::before
+            transform: translate(-50%, 20px) 
+
+    & .body
+        z-index: 1
+        border-radius: $radius
+        background: inherit
+        padding: 0 1.5em 1.5em
+
+    & li
+        padding: .125em 0
+
+    & .title
+        color: #000
+        margin: .5em 0 .35em
+        font-size: 1.7rem
+
+    &::after,
+    &::before
+        transition: .35s
+        content: ""
+        border-radius: $radius
+        box-shadow: $shadow
+        // background: #000
+        width: 60%
+        height: 6.25rem
+
+        display: block
+        position: absolute
+        bottom: 1px
+        left: 50%
+        transform: translate(-50%, 0)
+        z-index: -100
+        // backdrop-filter: blur(1px)
+        // filter: blur(1px)
+    
+    &::after
+        background: transparentize(#fff, .5)
+        width: 80%

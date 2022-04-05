@@ -1,0 +1,72 @@
+.container
+    width: 90%
+    margin: auto
+
+.row
+    display: flex
+    justify-content: space-between
+
+.col-responsive
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+
+
+// typography
+.link
+    color: #000
+    border-bottom: 2px solid transparent
+    transition: .3s
+    &:hover,
+    &:focus
+        border-bottom: 2px solid #000
+
+.title
+    font-size: 3rem
+    margin: .5em 0
+    font-family: 'Urbanist', sans-serif;
+
+.sub-title
+    font-size: 2.2rem
+    margin-top: -1rem
+
+a
+    color: inherit
+    text-decoration: none
+
+ul
+    margin: 0
+    padding: 0
+
+li
+    list-style: none
+
+img
+    width: 100%
+    height: auto
+
+body
+    background: $light
+    font-family: $fontMain
+    margin: 0
+    color: $dark
+
+header
+    background-color: #8BC6EC
+    background-image: linear-gradient(316deg, #8BC6EC 0%, #9599E2 100%)
+    color: $light
+    margin-bottom: 2em
+
+footer
+    background-color: #8BC6EC
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)
+    // position: absolute
+    // bottom: 0
+    width: 100%
+    text-align: center
+    padding: 1em 0
+    font-size: 1.2rem
+
+.form-group
+    margin-bottom: 1em
