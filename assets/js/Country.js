@@ -2,7 +2,13 @@ export default class Country {
 
     constructor(data) {
         this.data = data
-        this.code = (this.data.cioc === undefined) ? this.data.cioc : this.data.cca3
+        this.code = (this.data.cioc ==  undefined) ? this.data.cca3 : this.data.cioc
+        // create parent card element
+        this.htmlElement = document.createElement('a')
+
+        this.htmlElement.setAttribute('href', 'country.html?' + this.code) 
+        this.htmlElement.classList.add('card')
+
     }
 
     getBase() {
