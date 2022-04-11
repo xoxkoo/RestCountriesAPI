@@ -34,12 +34,12 @@ document.getElementById('search').addEventListener('keydown', async (e) => {
 
          // Make a new timeout set to run code 1sec after user stopped typping
         timeout = setTimeout(async function () {
-            filterBySearch()
+            filterBySearch(e.target.value)
         }, 1000)
 
     }
     else {
-        filterBySearch()
+        filterBySearch(e.target.value)
     }
 
     
@@ -65,15 +65,15 @@ filter.addEventListener('change', async (e) => {
 /**
  * 
  */
-async function filterBySearch() {
+async function filterBySearch(search) {
     let countries
     
     // if input is empty we load everything
-    if(e.target.value == '')
+    if(search == '')
         countries = await fetch.loadData('all')
     // try to load what user typed 
     else 
-        countries = await fetch.loadData('name/' + e.target.value)
+        countries = await fetch.loadData('name/' + search)
 
     document.querySelector('.card-container').innerHTML = ''
 
