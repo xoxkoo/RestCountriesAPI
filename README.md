@@ -4,4 +4,4 @@ In this website I used Javascript and AJAX to pull data from REST Countries API.
 
 [link to web](https://xoxkoo.github.io/RestCountriesAPI/)
 
-![]()
+![](https://github.com/xoxkoo/RestCountriesAPI/blob/main/Screenshot%202023-02-07%20at%202.42.37%20PM.png)
